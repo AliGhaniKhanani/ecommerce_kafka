@@ -59,7 +59,7 @@ async def consume_messages():
         bootstrap_servers="kafka-mart.servicebus.windows.net:9093",
         security_protocol="SASL_SSL",
         sasl_mechanism="PLAIN",
-        sasl_plain_username="$ConnectionString",
+        
         sasl_plain_password= SASL_PLAIN_PASSWORD,
         group_id="user-group",
         ssl_context=context,
