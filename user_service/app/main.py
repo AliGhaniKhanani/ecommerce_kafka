@@ -30,6 +30,7 @@ ALGORITHM = "HS256"
 SECRET_KEY = "user access token"
 
 
+
 # class Userupdate(SQLModel):
 #     user_name: str | None = None
 #     email: str | None = None
