@@ -14,6 +14,7 @@ from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
 from datetime import timedelta, datetime
 from jose import JWTError, jwt
 import ssl
+from settings import SASL_PLAIN_PASSWORD
 
 class User(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
@@ -59,7 +60,7 @@ async def consume_messages():
         security_protocol="SASL_SSL",
         sasl_mechanism="PLAIN",
         sasl_plain_username="$ConnectionString",
-        sasl_plain_password="Endpoint=sb://kafka-mart.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=7LnI7+5cP+S+o12kxwXXdcpc5dSgJs0L2+AEhLKf8FI=",
+        sasl_plain_password= SASL_PLAIN_PASSWORD,
         group_id="user-group",
         ssl_context=context,
     )
